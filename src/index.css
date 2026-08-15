@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --umoja-bg: 248 250 252;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background-color: rgb(var(--umoja-bg));
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', system-ui, sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: #94a3b8; background-clip: content-box; }
+
+  /* Focus ring */
+  :focus-visible {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
+  }
+  button:focus-visible, a:focus-visible {
+    outline-offset: 2px;
+    border-radius: 0.5rem;
+  }
+}
+
+@layer components {
+  /* Skeleton shimmer */
+  .skeleton {
+    background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.8s linear infinite;
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    background: linear-gradient(135deg, #047857 0%, #0d9488 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Premium card */
+  .card-premium {
+    background: white;
+    border: 1px solid rgb(241 245 249);
+    border-radius: 1.25rem;
+    box-shadow: 0 1px 3px 0 rgba(15,23,42,0.04), 0 4px 16px -4px rgba(15,23,42,0.06);
+  }
+
+  /* Subtle grid background */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(15,23,42,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(15,23,42,0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* No-scrollbar utility for horizontal scroll areas */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@layer utilities {
+  .animate-delay-100 { animation-delay: 0.1s; animation-fill-mode: both; }
+  .animate-delay-200 { animation-delay: 0.2s; animation-fill-mode: both; }
+  .animate-delay-300 { animation-delay: 0.3s; animation-fill-mode: both; }
+  .animate-delay-500 { animation-delay: 0.5s; animation-fill-mode: both; }
+}
